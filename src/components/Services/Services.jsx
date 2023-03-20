@@ -4,6 +4,7 @@ import HeartEmoji from "../../img/heartemoji.png";
 import Glasses from "../../img/glasses.png"
 import Humble from "../../img/humble.png"
 import Card from "../Card/Card";
+import Resume from './resume.pdf';
 
 const Services = () => { 
     return (
@@ -17,7 +18,9 @@ const Services = () => {
                     <br/>
                     web and blockchain development intern at Electroshoe, an SF based startup.
                 </span>
-                <button className="button s-button">Download CV</button>
+                <a href={Resume}>
+                    <button className="button s-button">Download CV</button>
+                </a>
                 <div className="blur s-blur" style={{background: "#ABF1FF94"}}></div>
             </div>
             {/*right side*/}
@@ -33,6 +36,8 @@ const Services = () => {
                 <div style={{top: "19rem", left: '12rem'}}>
                     <Card emoji = {Humble} heading = {'Developer'} detail = {"HTML, CSS, JAVASCRIPT, React"}/>
                 </div> 
+
+                <div className="blur s-blur2" style={{background: "var(--purple)"}}></div>
             </div>
         </div>
     )
