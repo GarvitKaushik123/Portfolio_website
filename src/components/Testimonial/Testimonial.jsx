@@ -44,7 +44,7 @@ const Testimonial = ()=>{
                                 <span>{client.review}</span>
                             </div>
                         </SwiperSlide>
-                    )
+                    ) 
                 })}
             </Swiper>
         </div>
