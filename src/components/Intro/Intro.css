@@ -9,7 +9,7 @@
     position: relative;
     flex: 1;  
     flex-direction: column;
-    gap: 2rem;
+    gap: 2rem; 
 }
 
 .i-name{

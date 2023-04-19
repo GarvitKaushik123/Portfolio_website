@@ -11,13 +11,21 @@ import thumbup from '../../img/thumbup.png';
 import Crown from '../../img/crown.png';
 import glassesimoji from '../../img/glassesimoji.png';
 import FloatingDiv from '../FloatingDiv/FloatingDiv';
+import { useContext } from 'react';
+import { themeContext } from '../../Context';
+import { motion } from 'framer-motion';
 
 const Intro = () => {
+    const transition = {duration: 2, type: 'spring'};
+    const theme = useContext(themeContext);
+    const darkMode = theme.state.darkMode;
     return (
         <div className='intro'>
             <div className='i-left'>
                 <div className='i-name'>
-                    <span>Hi! I am</span>
+                    <span style={{
+                        color: darkMode?'white': '',
+                    }}>Hi! I am</span>
                     <span>Garvit Kaushik</span>
                     <span>Web and blockchain developer 
                     with experience in Javascript,
@@ -42,13 +50,25 @@ const Intro = () => {
                 <img src={Vector1} alt=''/>
                 <img src={Vector2} alt=''/>
                 <img src={boy} alt=''/>
-                <img src={glassesimoji} alt=''/>
-                <div style={{top: '-4%', left: '68%'}}>
+                <motion.img 
+                initial={{left: '-36%'}}
+                whileInView={{left: '-24%'}}
+                transition={transition}
+                src={glassesimoji} alt=''/>
+                <motion.div 
+                initial={{top: '-4%', left: '74%'}}
+                whileInView={{left: '68%'}}
+                transition={transition}
+                style={{top: '-4%', left: '68%'}}>
                     <FloatingDiv image={Crown} txt1='Web' txt2='Developer'/>
-                </div>
-                <div style={{top: '18rem', left: '0rem'}}>
+                </motion.div>
+                <motion.div 
+                initial={{left: '9rem', top: '18rem'}}
+                whileInView={{left: '0rem'}}
+                transition={transition}
+                style={{top: '18rem', left: '0rem'}}>
                     <FloatingDiv image={thumbup} txt1='Blockchain' txt2='Developer'/>
-                </div>
+                </motion.div>
                 <div className='blur' style={{background: "rgb(238 210 255)"}}></div>
                 <div className='blur' style={{background: "#C1F5FF", top: '17rem', width: '21rem', height: '11rem', left: '-9rem'}}></div>
             </div>
